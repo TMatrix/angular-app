@@ -1,0 +1,18 @@
+<div class="edit-form">
+  <label>Firstname:
+    <input [(ngModel)]="user.firstname" type="text">
+  </label>
+  <label>Lastname:
+    <input [(ngModel)]="user.lastname" type="text">
+  </label>
+  <label>Email:
+    <input [(ngModel)]="user.email" type="email">
+  </label>
+  <label>Year of birth:
+    <input [(ngModel)]="user.year" type="text">
+  </label>
+  <label>Password:
+    <input [(ngModel)]="user.password" type="text">
+  </label>
+  <input type="submit" (click) = "update()" value="Save">
+</div>

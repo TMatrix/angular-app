@@ -1,0 +1,40 @@
+<div class="container">
+    <input
+      type="email" 
+      name="email"
+      [(ngModel)]="forgetGroup.email"
+      placeholder="Your email"
+      required
+      pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+      #emailInput="ngModel">
+    <div [hidden]="!emailInput.errors || !emailInput.touched || (emailInput.errors && !emailInput.errors.required)">
+      Email can't be empty
+    </div>
+    <div [hidden]="!emailInput.errors || (emailInput.errors && !emailInput.errors.pattern)">
+      Wrong format
+    </div>
+
+    <div class="validation">
+      <span>Answer the question:</span>
+      <div class="question">
+        {{validation.expression}}
+      </div>
+      <input 
+        [(ngModel)]="forgetGroup.validateConfirm"
+        type="number"
+        name="answer"
+        required
+        placeholder="Your answer"
+        #answerInput="ngModel">
+      <span class="error" *ngIf="validError">Wrong!</span>
+    </div>
+    
+    <router-outlet></router-outlet>
+
+    <button type="button" (click)="forget(!emailInput.errors)">Get password</button>
+
+    <div class="control-buttons">
+      <button class="btn-registrate" type="button" (click)="registrate()">Registration</button>
+      <button class="btn-login" type="button" (click)="login()">Login</button>
+    </div>
+</div>

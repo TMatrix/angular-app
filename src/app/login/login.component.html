@@ -1,0 +1,37 @@
+<div class="form-container">
+  <form name="login">
+    <input
+      type="email" 
+      name="email"
+      [(ngModel)]="input.email"
+      placeholder="Your email"
+      required
+      pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+      #emailInput="ngModel">
+    <div [hidden]="!emailInput.errors || !emailInput.touched || (emailInput.errors && !emailInput.errors.required)">
+      Email can't be empty
+    </div>
+    <div [hidden]="!emailInput.errors || (emailInput.errors && !emailInput.errors.pattern)">
+      Wrong format
+    </div>
+    <input
+      type="password"
+      name="password"
+      [(ngModel)]="input.password"
+      placeholder="Your password"
+      required
+      minlength="3"
+      #passwordInput="ngModel">
+    <div [hidden]="!passwordInput.errors || !passwordInput.touched || (passwordInput.errors && !passwordInput.errors.required)">
+      Password can't be empty
+    </div>
+    <div [hidden]="!passwordInput.errors || (passwordInput.errors && !passwordInput.errors.minlength)">
+      At least 3 characters.
+    </div>
+    <button type="button" (click)="login(!passwordInput.errors && !emailInput.errors)">Login</button>
+  </form>
+</div>
+<div>
+  <button (click)="onClick('registration')">Registration</button>
+  <button (click)="onClick('forget')">Forget password?</button>
+</div>
