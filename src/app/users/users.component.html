@@ -1,31 +1,48 @@
-<div>
-    <input matInput placeholder="Search something" value="" ngChange="search()" [(ngModel)]="searchValue">
+<div class="searchField">
+  <mat-form-field>
+    <input matInput placeholder="Search" value="" ngChange="search()" [(ngModel)]="searchValue">
+  </mat-form-field>
 </div>
 
 <table mat-table [dataSource]="dataSource | search: searchValue" class="mat-elevation-z8">
 
   <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef (click)="sort('id')"> ID </th>
+    <th mat-header-cell *matHeaderCellDef (click)="sort('id')"> ID 
+      <mat-icon *ngIf="currentSortField==='id' && currentSortDirection==='asc'">keyboard_arrow_up</mat-icon>
+      <mat-icon *ngIf="currentSortField==='id' && currentSortDirection==='desc'">keyboard_arrow_down</mat-icon>
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
   </ng-container>
 
   <ng-container matColumnDef="firstname">
-    <th mat-header-cell *matHeaderCellDef (click)="sort('firstname')"> Firstname </th>
+    <th mat-header-cell *matHeaderCellDef (click)="sort('firstname')"> Firstname 
+      <mat-icon *ngIf="currentSortField==='firstname' && currentSortDirection==='asc'">keyboard_arrow_up</mat-icon>
+      <mat-icon *ngIf="currentSortField==='firstname' && currentSortDirection==='desc'">keyboard_arrow_down</mat-icon>
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
   </ng-container>
 
   <ng-container matColumnDef="lastname">
-    <th mat-header-cell *matHeaderCellDef (click)="sort('lastname')"> Lastname </th>
+    <th mat-header-cell *matHeaderCellDef (click)="sort('lastname')"> Lastname 
+      <mat-icon *ngIf="currentSortField==='lastname' && currentSortDirection==='asc'">keyboard_arrow_up</mat-icon>
+      <mat-icon *ngIf="currentSortField==='lastname' && currentSortDirection==='desc'">keyboard_arrow_down</mat-icon>
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
   </ng-container>
 
   <ng-container matColumnDef="email">
-    <th mat-header-cell *matHeaderCellDef (click)="sort('email')"> Email </th>
+    <th mat-header-cell *matHeaderCellDef (click)="sort('email')"> Email 
+      <mat-icon *ngIf="currentSortField==='email' && currentSortDirection==='asc'">keyboard_arrow_up</mat-icon>
+      <mat-icon *ngIf="currentSortField==='email' && currentSortDirection==='desc'">keyboard_arrow_down</mat-icon>
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.email}} </td>
   </ng-container>
 
   <ng-container matColumnDef="year">
-    <th mat-header-cell *matHeaderCellDef (click)="sort('year')"> Year of birth </th>
+    <th mat-header-cell *matHeaderCellDef (click)="sort('year')"> Year of birth 
+      <mat-icon *ngIf="currentSortField==='year' && currentSortDirection==='asc'">keyboard_arrow_up</mat-icon>
+      <mat-icon *ngIf="currentSortField==='year' && currentSortDirection==='desc'">keyboard_arrow_down</mat-icon>
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.year}} </td>
   </ng-container>
 

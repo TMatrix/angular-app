@@ -1,11 +1,22 @@
 .edit-form{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
 
   margin: 10px;
 }
 
 .edit-form input {
-  margin-bottom: 10px;
+  text-align: center;
+}
+
+label{
+  margin-right: 35%;
+}
+
+button{
+  margin-top: 30px;
+  align-self: center;
+  color: #ffffff;
+  background-color: #6200ee;
 }

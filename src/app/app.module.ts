@@ -10,7 +10,7 @@ import { ForgetComponent } from './forget/forget.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { OnlyForLoggedInGuard } from './guards/only-for-logged-in.guard';
 import { OnlyfotnotloggedGuard } from './guards/onlyfotnotlogged.guard';
-import { MatTabsModule, MatButtonModule, MatTableModule, MatInputModule} from '@angular/material';
+import { MatTabsModule, MatButtonModule, MatTableModule, MatInputModule, MatIconModule} from '@angular/material';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { ProfileComponent } from './profile/profile.component';
 import { UsersComponent } from './users/users.component';
@@ -37,6 +37,7 @@ import { SearchPipe } from './pipes/search.pipe';
     MatButtonModule,
     MatTableModule,
     MatInputModule,
+    MatIconModule,
     NoopAnimationsModule
   ],
   providers: [OnlyForLoggedInGuard, OnlyfotnotloggedGuard],

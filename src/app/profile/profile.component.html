@@ -1,18 +1,28 @@
 <div class="edit-form">
   <label>Firstname:
-    <input [(ngModel)]="user.firstname" type="text">
+    <mat-form-field>
+      <input matInput [(ngModel)]="user.firstname" type="text">
+    </mat-form-field>
   </label>
   <label>Lastname:
-    <input [(ngModel)]="user.lastname" type="text">
+    <mat-form-field>
+      <input matInput [(ngModel)]="user.lastname" type="text">
+    </mat-form-field>
   </label>
   <label>Email:
-    <input [(ngModel)]="user.email" type="email">
+    <mat-form-field>
+      <input matInput [(ngModel)]="user.email" type="email">
+    </mat-form-field>
   </label>
   <label>Year of birth:
-    <input [(ngModel)]="user.year" type="text">
+    <mat-form-field>
+      <input matInput [(ngModel)]="user.year" type="text">
+    </mat-form-field>
   </label>
   <label>Password:
-    <input [(ngModel)]="user.password" type="text">
+    <mat-form-field>
+      <input matInput [(ngModel)]="user.password" type="text">
+    </mat-form-field>
   </label>
-  <input type="submit" (click) = "update()" value="Save">
+  <button mat-raised-button type="button" (click) = "update()">Save</button>
 </div>
