@@ -1,0 +1,24 @@
+.container{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.err {
+  color: #c51162;
+}
+.validation{
+  margin-top: 20px;
+}
+
+.container>button{
+  margin: 15px;
+  background-color: #6200ee;
+  color:#ffffff;
+}
+
+.control-buttons button{
+  margin-top: 35px;
+  margin-left: 10px;
+  background-color: #03dac6;
+  color: #000000;
+}

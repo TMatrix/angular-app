@@ -1,5 +1,7 @@
 <div class="container">
+  <mat-form-field>
     <input
+      matInput
       type="email" 
       name="email"
       [(ngModel)]="forgetGroup.email"
@@ -7,34 +9,38 @@
       required
       pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
       #emailInput="ngModel">
-    <div [hidden]="!emailInput.errors || !emailInput.touched || (emailInput.errors && !emailInput.errors.required)">
-      Email can't be empty
-    </div>
-    <div [hidden]="!emailInput.errors || (emailInput.errors && !emailInput.errors.pattern)">
-      Wrong format
-    </div>
+  </mat-form-field>
+  <div class="err" [hidden]="!emailInput.errors || !emailInput.touched || (emailInput.errors && !emailInput.errors.required)">
+    Email can't be empty
+  </div>
+  <div class="err" [hidden]="!emailInput.errors || (emailInput.errors && !emailInput.errors.pattern)">
+    Wrong format
+  </div>
 
-    <div class="validation">
-      <span>Answer the question:</span>
-      <div class="question">
-        {{validation.expression}}
-      </div>
+  <div class="validation">
+    <span>Answer the question:</span>
+    <div class="question">
+      {{validation.expression}}
+    </div>
+    <mat-form-field>
       <input 
+        matInput
         [(ngModel)]="forgetGroup.validateConfirm"
         type="number"
         name="answer"
         required
         placeholder="Your answer"
         #answerInput="ngModel">
-      <span class="error" *ngIf="validError">Wrong!</span>
-    </div>
+    </mat-form-field>
+    <span class="err" *ngIf="validError">Wrong!</span>
+  </div>
     
     <router-outlet></router-outlet>
 
-    <button type="button" (click)="forget(!emailInput.errors)">Get password</button>
+    <button mat-raised-button type="button" (click)="forget(!emailInput.errors)">Get password</button>
 
     <div class="control-buttons">
-      <button class="btn-registrate" type="button" (click)="registrate()">Registration</button>
-      <button class="btn-login" type="button" (click)="login()">Login</button>
+      <button mat-raised-button class="btn-registrate" type="button" (click)="registrate()">Registration</button>
+      <button mat-raised-button class="btn-login" type="button" (click)="login()">Login</button>
     </div>
 </div>
