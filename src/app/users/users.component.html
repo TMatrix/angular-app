@@ -2,6 +2,7 @@
   <mat-form-field>
     <input matInput placeholder="Search" value="" ngChange="search()" [(ngModel)]="searchValue">
   </mat-form-field>
+  <mat-icon>search</mat-icon>
 </div>
 
 <table mat-table [dataSource]="dataSource | search: searchValue" class="mat-elevation-z8">
