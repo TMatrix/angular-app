@@ -5,5 +5,20 @@
 }
 
 .register-form input {
-  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.register-form button {
+  margin: 15px;
+  background-color: #6200ee;
+  color:#ffffff;
+}
+
+.ctrl-btn{
+  text-align: center;
+}
+.ctrl-btn button{
+  margin-top: 35px;
+  background-color: #03dac6;
+  color: #000000; 
 }

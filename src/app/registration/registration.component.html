@@ -1,19 +1,25 @@
 <div class="register-form">
   <label>Firstname:
-    <input [(ngModel)]="user.firstname" type="text">
+    <mat-form-field>
+      <input matInput [(ngModel)]="user.firstname" type="text">
+    </mat-form-field>
   </label>
   <label>Lastname:
-    <input [(ngModel)]="user.lastname" type="text">
+    <mat-form-field>
+      <input matInput [(ngModel)]="user.lastname" type="text">
+    </mat-form-field>
   </label>
   <label>Email:
-    <input
-      [(ngModel)]="user.email"
-      type="email"
-      name="email"
-      placeholder="Your email"
-      required
-      pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-      #emailInput="ngModel">
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="user.email"
+        type="email"
+        name="email"
+        required
+        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+        #emailInput="ngModel">
+    </mat-form-field>
   </label>
   <div [hidden]="!emailInput.errors || !emailInput.touched || (emailInput.errors && !emailInput.errors.required)">
     Email can't be empty
@@ -22,24 +28,29 @@
     Wrong format
   </div>
   <label>Year of birth:
-    <input 
-      [(ngModel)]="user.year"
-      type="text"
-      pattern="^\d{4}$"
-      #yearInput="ngModel">
+    <mat-form-field>
+      <input 
+        matInput
+        [(ngModel)]="user.year"
+        type="text"
+        pattern="^\d{4}$"
+        #yearInput="ngModel">
+    </mat-form-field>
   </label>
   <div [hidden]="!yearInput.errors || (yearInput.errors && !yearInput.errors.pattern)">
     Only YYYY year format.
   </div>
   <label>Password:
-    <input
-      [(ngModel)]="user.password"
-      type="password"
-      name="password"
-      placeholder="Your password"
-      required
-      minlength="3"
-      #passwordInput="ngModel">
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="user.password"
+        type="password"
+        name="password"
+        required
+        minlength="3"
+        #passwordInput="ngModel">
+    </mat-form-field>
   </label>
   <div [hidden]="!passwordInput.errors || !passwordInput.touched || (passwordInput.errors && !passwordInput.errors.required)">
     Password can't be empty
@@ -47,8 +58,8 @@
   <div [hidden]="!passwordInput.errors || (passwordInput.errors && !passwordInput.errors.minlength)">
     At least 3 characters.
   </div>
-  <input type="submit" (click) = "register()">
+  <button mat-raised-button type="button" (click) = "register()">Registrate</button>
 </div>
-<div>
-  <button type="button" (click) = "onClick()">Login</button>
+<div class="ctrl-btn">
+  <button mat-raised-button type="button" (click) = "onClick()">Login</button>
 </div>
