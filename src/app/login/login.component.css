@@ -1,3 +1,7 @@
+.form-container{
+  margin-top: 30px;
+}
+
 .form-container form{
   display: flex;
   flex-direction: column;
@@ -8,4 +12,22 @@
 
 .form-container form input{
   margin-bottom: 10px;
+}
+
+.form-container form button{
+  margin-top: 20px;
+  background-color: #6200ee;
+  color:#ffffff;
+}
+
+.control-btn{
+  margin-top: 40px;
+  text-align: center;
+}
+
+.control-btn button {
+  margin: 5px;
+  border: none;
+  background-color: #03dac6;
+  color: #000000; 
 }
