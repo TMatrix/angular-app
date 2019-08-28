@@ -21,7 +21,7 @@ export class UsersComponent implements OnInit {
     this.dataSource = this.userService.getUsers();
   }
   
-  @ViewChild(MatTable) table: MatTable<any>;
+  @ViewChild(MatTable, {static: false}) table: MatTable<any>;
 
   sort(field) {
     const sortDirection = this.setSortDirection(field);;
